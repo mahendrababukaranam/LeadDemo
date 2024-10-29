@@ -1,0 +1,15 @@
+
+<suite name="Suite">
+	<test thread-count="5" name="DeleteEmployeeTest">
+		
+		<classes>
+			<class name="com.Hrms.tests.TestPIMPage" />
+		</classes>
+		<methods>
+			<exclude name="addEmployee"></exclude>
+			<include name="deleteEmployee"></include>
+		</methods>
+	</test> <!--
+	DeleteEmployeeTest -->
+</suite> <!--
+Suite -->

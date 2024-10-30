@@ -15,9 +15,11 @@ public class TestLoginPage extends BasePage{
 	
 	@Test(description="verify LoginPage",priority=0)
 	public void verifyLoginPage() throws Exception {
-			
+	CommonUtils.screenshots("Before Login");
+	CommonUtils.hardWait(5);
 	loginPage.login();
 	CommonUtils.hardWait(5);
+	CommonUtils.screenshots("After Login");
 	TestNGUtility.assertTrue(CommonUtils.getElementText(loginPage.getWelcomePage()),"Welcome selenium");
 	System.out.println("verified");
 	

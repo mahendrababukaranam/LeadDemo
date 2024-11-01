@@ -325,8 +325,7 @@ public class CommonUtils {
 	public static void screenshots(String ScreenshotName) throws IOException {
 		try {
 			File copy_Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			File screenshot_location = new File(
-					"C:\\Users\\mahin\\git\\LeadDemo\\Dominos\\src\\test\\resources\\Screenshots" + ScreenshotName+ ".jpg");
+			File screenshot_location = new File("C:\\Users\\mahin\\git\\LeadDemo\\Dominos\\src\\test\\resources\\Screenshots"+ ScreenshotName+".jpeg");
 			Files.copy(copy_Screenshot, screenshot_location);
 		} catch (Exception e) {
 			TestNGUtility.assertFail(e.getMessage());

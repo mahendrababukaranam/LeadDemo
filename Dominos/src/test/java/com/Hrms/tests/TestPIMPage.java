@@ -77,7 +77,7 @@ public class TestPIMPage extends BasePage{
 		CommonUtils.clickElement(PIMPage.getEmpList());
 		CommonUtils.clickElement(PIMPage.getEditButton());
 		CommonUtils.enterValue(PIMPage.getFirstName(), "Mahendra", true);
-		CommonUtils.clickElement(PIMPage.getSaveButton());
+		CommonUtils.clickElement(PIMPage.getClickSaveButton());
 		CommonUtils.clickElement(PIMPage.getBackButton());
 		CommonUtils.getElementText(PIMPage.getSavedEmpDataVerify());
 		TestNGUtility.assertTrue("Mahendra Test",CommonUtils.getElementText(PIMPage.getSavedEmpDataVerify()));
@@ -110,8 +110,17 @@ public class TestPIMPage extends BasePage{
 	
 	@Test(description="Verify that photos can be added to employee profiles",priority=5)
 	public void addEmployeePhotos() throws Exception {
-	
-	
+		loginPage.login();
+		CommonUtils.hardWait(5);
+		TestNGUtility.assertTrue(CommonUtils.getElementText(loginPage.getWelcomePage()),"Welcome selenium");
+		CommonUtils.switchToFrame(PIMPage.getFrame());
+		CommonUtils.clickElement(PIMPage.getEmpList());
+		CommonUtils.clickElement(PIMPage.getClickOnEditPhotoBox());
+		//CommonUtils.clickElement(PIMPage.getClickOnUploadPhotoField());
+		CommonUtils.uploadFile(PIMPage.getClickOnUploadPhotoField(), "D:\\Kosmik Technologies\\Images\\Brian_Donnellan_4510.png");
+		CommonUtils.clickElement(PIMPage.getClickOnUploadPhotoSaveButton());
+		CommonUtils.isElementDisplayed(PIMPage.getAddedEmpPhotoVerify());
+				
 	}
 	
 	@Test(description="Verify that employee details are correctly displayed",priority=6)

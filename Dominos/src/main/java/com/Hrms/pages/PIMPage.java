@@ -26,11 +26,12 @@ public class PIMPage{
 	private final static By by_clickEditButton = By.xpath("//input[@id='btnEditPers']");
 	private final static By by_clickSaveButton = By.xpath("//input[@value='Save']");
 	private final static By by_savedEmpDataVerify = By.xpath("//a[contains(text(), 'Mahendra')]");
+	private final static By by_clickOnEditPhotoBox = By.xpath("//img[@onclick='showPhotoHandler()']");
+	private final static By by_clickOnUploadPhotoField = By.xpath("//input[@id='photofile']");
+	private final static By by_clickOnUploadPhotoSaveButton = By.xpath("//input[@onclick='addPic();']");
+	private final static By by_verifyAddedEmpPhoto = By.xpath("//img[@alt='Click to edit photo']");
 	
-	
-	
-	
-	
+
 	
 	
 	// Getter/Setter Helping functions
@@ -106,7 +107,7 @@ public class PIMPage{
 		return by_clickEditButton;
 	}
 	
-	public static By getSaveButton() throws Exception {
+	public static By getClickSaveButton() throws Exception {
 		return by_clickSaveButton;
 	}
 
@@ -118,5 +119,25 @@ public class PIMPage{
 		// TODO Auto-generated method stub
 		return by_selectEmpList;
 	}
+	
+	public static By getClickOnEditPhotoBox() {
+		// TODO Auto-generated method stub
+		return by_clickOnEditPhotoBox;
+	}
+	
+	public static By getClickOnUploadPhotoField() {
+		// TODO Auto-generated method stub
+		return by_clickOnUploadPhotoField;
+	}
 
+	public static By getClickOnUploadPhotoSaveButton() {
+		// TODO Auto-generated method stub
+		return by_clickOnUploadPhotoSaveButton;
+	}
+	
+	public static By getAddedEmpPhotoVerify() {
+		// TODO Auto-generated method stub
+		return by_verifyAddedEmpPhoto;
+	}
+	
 }

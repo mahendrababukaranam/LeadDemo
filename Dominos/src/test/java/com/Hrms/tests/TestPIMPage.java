@@ -59,14 +59,28 @@ public class TestPIMPage extends BasePage{
 		loginPage.login();
 		CommonUtils.hardWait(5);
 		TestNGUtility.assertTrue(CommonUtils.getElementText(loginPage.getWelcomePage()),"Welcome selenium");
-		CommonUtils.moveToElement(PIMPage.getPim());
-		CommonUtils.clickElement(PIMPage.getAddEmp());	
+		//CommonUtils.moveToElement(PIMPage.getPim());
+		CommonUtils.switchToFrame(PIMPage.getFrame());
+		CommonUtils.selectDropDownValue(PIMPage.getDropdown() , "Emp. ID");
+		CommonUtils.enterValue(PIMPage.getSearchFor(), "0015", true);
+		CommonUtils.clickElement(PIMPage.getSearchButton());
+		CommonUtils.getElementAttributeValue(PIMPage.getSearchEmpVerify(), "0015");
 		
 	}
 	
 	@Test(description="Verify that employee details can be edited successfully",priority=2)
 	public void editEmployeeDetails() throws Exception {
-	
+		loginPage.login();
+		CommonUtils.hardWait(5);
+		TestNGUtility.assertTrue(CommonUtils.getElementText(loginPage.getWelcomePage()),"Welcome selenium");
+		CommonUtils.switchToFrame(PIMPage.getFrame());
+		CommonUtils.clickElement(PIMPage.getEmpList());
+		CommonUtils.clickElement(PIMPage.getEditButton());
+		CommonUtils.enterValue(PIMPage.getFirstName(), "Mahendra", true);
+		CommonUtils.clickElement(PIMPage.getSaveButton());
+		CommonUtils.clickElement(PIMPage.getBackButton());
+		CommonUtils.getElementText(PIMPage.getSavedEmpDataVerify());
+		TestNGUtility.assertTrue("Mahendra Test",CommonUtils.getElementText(PIMPage.getSavedEmpDataVerify()));
 	
 	}
 	

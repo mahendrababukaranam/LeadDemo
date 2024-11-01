@@ -5,6 +5,8 @@
     <classes>
       <class name="com.Hrms.tests.TestPIMPage">
         <methods>
+          <include name="editEmployeeDetails"/>
+          <include name="addEmployeePhotos"/>
           <include name="setup"/>
           <include name="deleteEmployee"/>
           <include name="searchEmployee"/>

@@ -22,6 +22,14 @@ public class PIMPage{
 	private final static By by_deleteEmp = By.xpath("//input[@value='Delete']");
 	private final static By by_deleteMessage = By.xpath("//span[@class='failure']");
 	private final static By by_deleteEmpVerify = By.xpath("//input[@value='0014']");
+	private final static By by_clickEmpList = By.xpath("//a[@href='./CentralController.php?menu_no_top=hr&id=0016&capturemode=updatemode&reqcode=EMP&currentPage=1']");
+	private final static By by_clickEditButton = By.xpath("//input[@id='btnEditPers']");
+	private final static By by_clickSaveButton = By.xpath("//input[@value='Save']");
+	private final static By by_savedEmpDataVerify = By.xpath("//a[contains(text(), 'Mahendra')]");
+	
+	
+	
+	
 	
 	
 	
@@ -88,6 +96,27 @@ public class PIMPage{
 	
 	public static By getDeleteEmpVerify() throws Exception {
 		return by_deleteEmpVerify;
+	}
+	
+	public static By getEmpList() throws Exception {
+		return by_clickEmpList;
+	}
+	
+	public static By getEditButton() throws Exception {
+		return by_clickEditButton;
+	}
+	
+	public static By getSaveButton() throws Exception {
+		return by_clickSaveButton;
+	}
+
+	public static By getSavedEmpDataVerify() throws Exception {
+		return by_savedEmpDataVerify;
+	}
+
+	public static By getSearchEmpVerify() {
+		// TODO Auto-generated method stub
+		return by_selectEmpList;
 	}
 
 }

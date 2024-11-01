@@ -8,7 +8,7 @@
 		<methods>
 			<exclude name="addEmployee"></exclude>
 			<exclude name="deleteEmployee"></exclude>
-			<include name="addEmployeePhotos"></include>
+			<exclude name="addEmployeePhotos"></exclude>
 		</methods>
 	</test> <!--
 	DeleteEmployeeTest -->

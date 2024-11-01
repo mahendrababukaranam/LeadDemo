@@ -120,9 +120,7 @@ public class TestPIMPage extends BasePage{
 		CommonUtils.uploadFile(PIMPage.getClickOnUploadPhotoField(), "D:\\Kosmik Technologies\\Images\\Brian_Donnellan_4510.png");
 		CommonUtils.clickElement(PIMPage.getClickOnUploadPhotoSaveButton());
 		CommonUtils.isElementDisplayed(PIMPage.getAddedEmpPhotoVerify());
-		//CommonUtils.clickElement(PIMPage.getBackButton());
-		//CommonUtils.clickElement(PIMPage.getEmpList());
-		
+				
 	}
 	
 	@Test(description="Verify that employee details are correctly displayed",priority=6)
